@@ -1,11 +1,11 @@
 FROM raspbian/stretch:041518
 MAINTAINER Eric Millet <emilletfr@gmail.com>
-RUN apt-get update && apt-get install -y \
-pkg-config \
-curl \
-libxml2 \
-libssl \
-zlib1g-dev \
+RUN apt-get update
+RUN apt-get install -y pkg-config
+RUN apt-get install -y curl
+RUN apt-get install -y libxml2
+RUN apt-get install -y libssl
+RUN apt-get install -y zlib1g-dev
 
 RUN curl -s https://packagecloud.io/install/repositories/swift-arm/release/script.deb.sh | sudo bash
 RUN apt-get install swift4=4.2
