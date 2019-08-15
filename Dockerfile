@@ -5,6 +5,9 @@ ARG SWIFTPKG=https://packagecloud.io/swift-arm/release/packages/ubuntu/bionic/sw
 
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN sudo rm /etc/resolv.conf
+RUN sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+
 RUN apt-get update
 RUN apt-get upgrade -y
 
